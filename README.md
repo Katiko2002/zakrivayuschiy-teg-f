@@ -1,1 +1,1 @@
-https://github.com/Katiko2002/zakrivayuschiy-teg-f.git
+https://katiko2002.github.io/zakrivayuschiy-teg-f/
