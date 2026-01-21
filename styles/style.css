@@ -2,6 +2,8 @@
 
 Будьте внимательны! Для корректной работы скриптов на этом сайте нужно, чтобы в HTML некоторые классы были названы особым образом:
 ✦ like-icon — для svg-иконки анимированного сердца
+
+
 ✦ card__like-button — для кнопки Like рядом с иконкой
 ✦ card__icon-button — для кнопки, оборачивающей иконку
 ✦ card__icon-button — для кнопки, оборачивающей иконку
@@ -13,4 +15,371 @@
 .page {
   min-inline-size: 320px;
   min-block-size: 100dvb;
+  font-family: var(--main-font), system-ui, sans-serif;
+  font-variation-settings: "wght" var(--text-weight);
+  background-image: var(--page-background);
+  background-position: center;
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+.header {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  background-color: white;
+  font-family: var(--accent-font);
+  text-transform: uppercase;
+  border: 2px solid;
+  inline-size: var(--container-inline-size);
+  margin-inline: auto;
+  margin-block-start: 100px;
+  margin-block-end: 100px;
+  padding-block: clamp(122px, 10vw, 130px);
+  padding-inline: clamp(16px, 10vw, 122px);
+}
+
+.header-logo {
+  font-size: clamp(3rem, 2.6259rem + 1.5962vw, 4.0625rem);
+  line-height: clamp(3rem, 2.6259rem + 1.5962vw, 4.0625rem);
+  /* max-inline-size: clamp(343px, 10vw, 455px);  */
+}
+
+.header-title {
+  font-size: clamp(0.875rem, 0.6769rem + 0.8451vw, 1.4375rem);
+  line-height: clamp(0.875rem, 0.6769rem + 0.8451vw, 1.4375rem);
+  min-block-size: 30px;
+  /* max-inline-size: clamp(210px, 10vw, 345px); */
+}
+
+.main {
+  inline-size: var(--container-inline-size);
+  font-family: var(--main-font);
+  inline-size: var(--container-inline-size);
+  margin-inline: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+}
+
+.card {
+  border: 2px solid black;
+  background-color: white;
+}
+
+.card-title {
+  font-weight: var(--title-weight);
+  font-size: 18px;
+  line-height: 22px;
+  font-variation-settings: "slnt" 0;
+  padding: 10px 4px;
+}
+
+.image-box {
+  position: relative;
+}
+
+.image-label {
+  position: absolute;
+  z-index: 1;
+  top: 25px;
+  right: 25px;
+  font-family: var(--accent-font);
+  font-size: 14px;
+  line-height: 14px;
+  text-transform: uppercase;
+  mix-blend-mode: hard-light;
+  opacity: 0.5;
+  text-shadow:
+    1px -1px var(--shadow),
+    1px 1px var(--shadow),
+    -1px 1px var(--shadow),
+    -1px -1px var(--shadow);
+}
+
+@supports ((text-stroke: 1px white) or (-webkit-text-stroke: 1px white)) {
+  .image-label {
+    -webkit-text-stroke: 1px var(--shadow);
+    text-stroke: 1px var(--shadow);
+    text-shadow: none;
+  }
+}
+
+.card-image {
+  display: block;
+  width: 100%;
+}
+
+/* .normal-bus {
+  filter: brightness(200%);
+} */
+
+.normal-bus {
+}
+
+.night-bus {
+  filter: brightness(50%) contrast(150%);
+}
+
+.bright-bus {
+  filter: brightness(200%) sepia(60%);
+}
+
+.evening-bus {
+  filter: grayscale(80%) invert(30%)
+    drop-shadow(5px 15px 3px rgba(0, 0, 0, 0.8));
+}
+
+.green-bus {
+  filter: invert(90%) hue-rotate(30deg) saturate(80%);
+}
+
+.black-bus {
+  filter: grayscale(80%) invert(100%) brightness(50%);
+}
+
+.blind-bus {
+  filter: blur(5px) hue-rotate(300deg);
+}
+
+.blind-green-bus {
+  filter: invert(90%) blur(20px);
+}
+
+.card-text {
+  padding: 25px;
+  display: grid;
+  row-gap: 25px;
+  font-family: var(--main-font);
+  font-weight: var(--text-weight);
+  font-size: 18px;
+  line-height: 21px;
+  font-variation-settings: "slnt" 0;
+}
+
+.like-buttons {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.card__icon-button {
+  background-color: white;
+  outline: none;
+  border: 2px solid transparent;
+  transition: border-color 0.3s ease;
+  cursor: pointer;
+}
+
+.card__icon-button:focus {
+  outline: none;
+}
+
+.card__icon-button:focus-visible {
+  border-color: black;
+}
+
+.like-icon {
+  display: block;
+}
+
+.like-icon__first-core {
+  transition: fill 0.3s linear 0.03s;
+}
+
+.like-icon__second-main-body {
+  transition: fill 0.3s linear;
+}
+
+.like-icon__third-contour {
+  transition: fill 0.1s linear;
+}
+
+.like-icon__fourth-sparks {
+  opacity: 0;
+}
+
+.card__icon-button:hover .like-icon__first-core {
+  fill: var(--heart-countour-color);
+  transition-delay: 0s;
+}
+
+.card__icon-button:hover .like-icon__second-main-body {
+  fill: var(--heart-countour-color);
+  transition-delay: 0.05s;
+}
+
+.card__icon-button:active .like-icon__first-core {
+  fill: var(--animation-fill-color);
+  transition-delay: 0s;
+}
+
+.card__icon-button:active .like-icon__second-main-body {
+  fill: var(--animation-fill-color);
+  transition-delay: 0.05s;
+}
+
+.like-icon.is-liked .heart {
+  animation: heart-scale 0.3s ease-in 0.1s 1;
+  transform-origin: center;
+}
+
+.like-icon.is-liked .like-icon__first-core {
+  fill: var(--animation-fill-color);
+  transition-delay: 0s;
+}
+
+.like-icon.is-liked .like-icon__second-main-body {
+  fill: var(--animation-fill-color);
+  transition-delay: 0.05s;
+}
+
+.like-icon.is-liked .like-icon__third-contour {
+  fill: var(--animation-fill-color);
+  transition: fill 0.3 linear 0.06s;
+}
+
+.like-icon.is-liked .like-icon__fourth-sparks {
+  fill: var(--animation-fill-color);
+  animation: sparks-flash 0.3s ease-in 0.3s 1;
+}
+
+/*  */
+/*  */
+/*  */
+/*  */
+/*  */
+
+.card__like-button {
+  width: 130px;
+  height: 38px;
+  outline: none;
+  background-color: inherit;
+  border: 2px solid black;
+  transition: box-shadow 0.3s ease;
+  cursor: pointer;
+}
+
+.card__like-button:focus-visible {
+  box-shadow: 2px 2px 0 black;
+}
+
+.button__text {
+  /* Сохранить на память */
+  font-family: var(--accent-font);
+  font-size: 14px;
+  line-height: 90%;
+  position: relative;
+  z-index: 1;
+  color: var(--button-color);
+  mix-blend-mode: difference;
+}
+
+.button-save {
+  /* 306 84  and  335 55*/
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px;
+  inline-size: clamp(306px, 80vw, 335px);
+  margin-inline: auto;
+  padding: 20px 17px;
+  outline: none;
+  border: 2px solid black;
+  background-color: white;
+  cursor: pointer;
+}
+
+.animated-black-button {
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+  background-color: white;
+  cursor: pointer;
+}
+
+.animated-black-button::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-color: black;
+  transform: translateX(-100%);
+  transition: transform 0.5s ease-in-out;
+}
+
+.animated-black-button:hover::before {
+  transform: translateX(0);
+}
+
+.button__floppy-icon {
+  display: block;
+  width: 28px;
+  height: 28px;
+  color: white;
+  mix-blend-mode: difference;
+}
+
+.save-block {
+  padding: 30px 40px;
+  inline-size: clamp(341px, 50vw, 353px);
+  margin-inline: 17px;
+  border: 2px solid black;
+  display: grid;
+  grid-template-columns: min-content 1fr;
+  grid-template-rows: 1fr auto;
+  gap: 30px 20px;
+  background-color: white;
+  position: fixed;
+}
+
+.save-block:not([open]) {
+  pointer-events: none;
+  opacity: 0;
+}
+
+.save-block::backdrop {
+  background-color: rgb(0 0 0 / 75%);
+}
+
+.save-block__floppy-icon {
+  width: 39px;
+  height: 39px;
+  align-self: center;
+}
+
+.save-block__instruction {
+  font-family: var(--accent-font);
+  font-size: 14px;
+  line-height: 150%;
+}
+
+.save-block__button {
+  grid-column-start: 1;
+  grid-column-end: 3;
+  height: 38px;
+  outline: none;
+  background-color: white;
+  border: 2px solid black;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+/* Медиа писала сразу, начиная с mobile-first, 
+поэтому поменяла медиазапрос */
+@media (width >= 1440px) {
+  .header {
+    margin-block-end: 98px;
+  }
+
+  .button__floppy-icon {
+    width: 21px;
+    height: 21px;
+  }
+
+  .save-block {
+    padding-inline: 30px;
+    margin: auto auto;
+  }
 }
