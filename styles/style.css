@@ -112,13 +112,6 @@
   width: 100%;
 }
 
-/* .normal-bus {
-  filter: brightness(200%);
-} */
-
-.normal-bus {
-}
-
 .night-bus {
   filter: brightness(50%) contrast(150%);
 }
@@ -244,12 +237,6 @@
   fill: var(--animation-fill-color);
   animation: sparks-flash 0.3s ease-in 0.3s 1;
 }
-
-/*  */
-/*  */
-/*  */
-/*  */
-/*  */
 
 .card__like-button {
   width: 130px;
