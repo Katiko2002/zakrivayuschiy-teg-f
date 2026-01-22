@@ -25,14 +25,16 @@
       <h1 class="header-title">закрывающий тег</h1>
     </header>
     <main class="main">
-      <section class="card free-track">
+      <article class="card free-track">
         <h2 class="card-title">
           Фритрек и нулевой спринт: Подготовка к работе
         </h2>
         <div class="image-box">
-          <span class="image-label">&lt;Одна ошибка, и ты ошибся&gt;</span>
+          <span class="image-label" aria-hidden="true"
+            >&lt;Одна ошибка, и ты ошибся&gt;</span
+          >
           <img
-            class="card-image normal-bus"
+            class="card-image no-filter"
             src="images/1normal-bus.jpg"
             alt="Автобус пикельная картинка"
             loading="lazy"
@@ -45,14 +47,19 @@
             знания могут повлиять на ваше будущее.
           </p>
           <p class="card-additional">
-            Сначала потом, затем снова опять.<br>
-            Наполеон тоже не сразу тортом стал.<br>
+            Сначала потом, затем снова опять.<br />
+            Наполеон тоже не сразу тортом стал.<br />
             Секрет успеха прост, но это секрет.
           </p>
           <div class="like-buttons">
-            <button class="card__icon-button">
+            <button
+              class="card__icon-button"
+              type="button"
+              aria-label="Поставить лайк"
+            >
               <svg
                 class="like-icon"
+                aria-hidden="true"
                 width="39"
                 height="36"
                 viewBox="0 0 39 36"
@@ -84,19 +91,34 @@
               </svg>
             </button>
 
-            <button class="card__like-button animated-black-button">
+            <!-- Не уверена, что правильно поняла замечание. 
+             Подумала, что нужно изменить имя класса, убрать black, 
+             чтобы класс описывал то, чем является кнопка, а не как она выглядит
+              -->
+            <!-- Блоки card__icon-button и card__like-button 
+              находятся в одной обертке - <div class="like-buttons">
+                Так и задуманно для более удобного позиционирования
+                относительно друг друга -->
+
+            <!-- Если же проблема в том, что у меня мало где встречается структура
+                 block__element, то учту этот момент для следующих проектов,
+                 так как в этом пока исправляю, боюсь наделать ошибок по невнимательности,
+                 которые долго буду исправлять -->
+            <button class="button card__like-button" type="button">
               <span class="button__text">Like</span>
             </button>
           </div>
         </div>
-      </section>
+      </article>
 
-      <section class="card clean-slate">
+      <article class="card clean-slate">
         <h2 class="card-title">1 спринт: Я — чистый лист</h2>
         <div class="image-box">
-          <span class="image-label">&lt;Ты не кваритра&gt;</span>
+          <span class="image-label" aria-hidden="true"
+            >&lt;Ты не кваритра&gt;</span
+          >
           <img
-            class="card-image night-bus"
+            class="card-image filter-brightness-contrast"
             src="images/1normal-bus.jpg"
             alt="Автобус пикельная картинка ночью"
             loading="lazy"
@@ -111,16 +133,22 @@
             будет слишком сложно? что, если я не справлюсь?
           </p>
           <p class="card-additional">
-            Никогда не сдавайся, ведь ты не картира.<br>
-            Слабый человек ищет оправдание. Сильный - подготовил их заранее.<br>
-            Чем сложнее задача, тем проще ее не решать.<br>
-            Не откладывай на завтра то, что можно сделать послезавтра. Будет еще день.<br>
+            Никогда не сдавайся, ведь ты не картира.<br />
+            Слабый человек ищет оправдание. Сильный - подготовил их заранее.<br />
+            Чем сложнее задача, тем проще ее не решать.<br />
+            Не откладывай на завтра то, что можно сделать послезавтра. Будет еще
+            день.<br />
             Терпение и труд, всё, я устала.
           </p>
           <div class="like-buttons">
-            <button class="card__icon-button">
+            <button
+              class="card__icon-button"
+              type="button"
+              aria-label="Поставить лайк"
+            >
               <svg
                 class="like-icon"
+                aria-hidden="true"
                 width="39"
                 height="36"
                 viewBox="0 0 39 36"
@@ -152,19 +180,21 @@
               </svg>
             </button>
 
-            <button class="card__like-button animated-black-button">
+            <button class="button card__like-button" type="button">
               <span class="button__text">Like</span>
             </button>
           </div>
         </div>
-      </section>
+      </article>
 
-      <section class="card doubts">
+      <article class="card doubts">
         <h2 class="card-title">1 спринт: А если не получится?</h2>
         <div class="image-box">
-          <span class="image-label">&lt;Упал - вставай, встал - упай&gt;</span>
+          <span class="image-label" aria-hidden="true"
+            >&lt;Упал - вставай, встал - упай&gt;</span
+          >
           <img
-            class="card-image bright-bus"
+            class="card-image filter-brightness-sepia"
             src="images/1normal-bus.jpg"
             alt="Автобус пикельная картинка яркая"
             loading="lazy"
@@ -177,16 +207,23 @@
             наоборот, могли вдохновиться успехами и поверить в себя.
           </p>
           <p class="card-additional">
-            На красный диплом не нужно идти, ведь идти на красный нельзя. <br>
-            Делай хорошо, а плохо - само получится.<br>
-            Не бойся, когда ты один. Бойся, когда ты ноль.<br>
-            Открывая новую дверь у тебя только два варианта: на себя или от себя.<br>
-            Мама учила не ругаться матом, но жизнь научила не ругаться матом при маме.
+            На красный диплом не нужно идти, ведь идти на красный нельзя. <br />
+            Делай хорошо, а плохо - само получится.<br />
+            Не бойся, когда ты один. Бойся, когда ты ноль.<br />
+            Открывая новую дверь у тебя только два варианта: на себя или от
+            себя.<br />
+            Мама учила не ругаться матом, но жизнь научила не ругаться матом при
+            маме.
           </p>
           <div class="like-buttons">
-            <button class="card__icon-button">
+            <button
+              class="card__icon-button"
+              type="button"
+              aria-label="Поставить лайк"
+            >
               <svg
                 class="like-icon"
+                aria-hidden="true"
                 width="39"
                 height="36"
                 viewBox="0 0 39 36"
@@ -218,19 +255,21 @@
               </svg>
             </button>
 
-            <button class="card__like-button animated-black-button">
+            <button class="button card__like-button" type="button">
               <span class="button__text">Like</span>
             </button>
           </div>
         </div>
-      </section>
+      </article>
 
-      <section class="card chasing-ideal">
+      <article class="card chasing-ideal">
         <h2 class="card-title">2 спринт: Погоня за идеалом</h2>
         <div class="image-box">
-          <span class="image-label">&lt;Жи-ши - от души&gt;</span>
+          <span class="image-label" aria-hidden="true"
+            >&lt;Жи-ши - от души&gt;</span
+          >
           <img
-            class="card-image evening-bus"
+            class="card-image filter-grayscale-invert"
             src="images/1normal-bus.jpg"
             alt="Автобус пикельная картинка вечерний"
             loading="lazy"
@@ -245,15 +284,20 @@
             старались просто сделать.
           </p>
           <p class="card-additional">
-            Сказал - сделал. Не сделал - снова сказал.<br>
-            Хороший асфальт на дороге не валяется.<br>
-            Хочешь удвоить зарплату - поставь ее перед зеркалом.<br>
+            Сказал - сделал. Не сделал - снова сказал.<br />
+            Хороший асфальт на дороге не валяется.<br />
+            Хочешь удвоить зарплату - поставь ее перед зеркалом.<br />
             "Жи-ши" пиши от души.
           </p>
           <div class="like-buttons">
-            <button class="card__icon-button">
+            <button
+              class="card__icon-button"
+              type="button"
+              aria-label="Поставить лайк"
+            >
               <svg
                 class="like-icon"
+                aria-hidden="true"
                 width="39"
                 height="36"
                 viewBox="0 0 39 36"
@@ -285,19 +329,21 @@
               </svg>
             </button>
 
-            <button class="card__like-button animated-black-button">
+            <button class="button card__like-button" type="button">
               <span class="button__text">Like</span>
             </button>
           </div>
         </div>
-      </section>
+      </article>
 
-      <section class="card about-mates">
+      <article class="card about-mates">
         <h2 class="card-title">2 спринт: О тех, кто рядом</h2>
         <div class="image-box">
-          <span class="image-label">&lt;Я твой отец&gt;</span>
+          <span class="image-label" aria-hidden="true"
+            >&lt;Я твой отец&gt;</span
+          >
           <img
-            class="card-image green-bus"
+            class="card-image filter-invert-hue-rotate-saturate"
             src="images/1normal-bus.jpg"
             alt="Автобус пикельная картинка зеленая"
             loading="lazy"
@@ -313,17 +359,24 @@
             правда ли?
           </p>
           <p class="card-additional">
-            Родители - это те люди, которые нас родили. <br>
-            Как говорил мой отец: "Я твой отец".<br>
-            А еще он говорил, что не стоит рассчитывать на таксистов, ведь они могут вас подвезти.<br>
-            Так однаждый моего друга сбил таксист и теперь он мне не друг. Ведь друзья на дороге не валяются.<br>
-            У настоящего волка круг друзей небольшой. Но у каждого в этом кругу большой.
-            
+            Родители - это те люди, которые нас родили. <br />
+            Как говорил мой отец: "Я твой отец".<br />
+            А еще он говорил, что не стоит рассчитывать на таксистов, ведь они
+            могут вас подвезти.<br />
+            Так однаждый моего друга сбил таксист и теперь он мне не друг. Ведь
+            друзья на дороге не валяются.<br />
+            У настоящего волка круг друзей небольшой. Но у каждого в этом кругу
+            большой.
           </p>
           <div class="like-buttons">
-            <button class="card__icon-button">
+            <button
+              class="card__icon-button"
+              type="button"
+              aria-label="Поставить лайк"
+            >
               <svg
                 class="like-icon"
+                aria-hidden="true"
                 width="39"
                 height="36"
                 viewBox="0 0 39 36"
@@ -355,19 +408,21 @@
               </svg>
             </button>
 
-            <button class="card__like-button animated-black-button">
+            <button class="button card__like-button" type="button">
               <span class="button__text">Like</span>
             </button>
           </div>
         </div>
-      </section>
+      </article>
 
-      <section class="card strategies">
+      <article class="card strategies">
         <h2 class="card-title">3 спринт: Обходные стратегии</h2>
         <div class="image-box">
-          <span class="image-label">&lt;Перемены для учителя&gt;</span>
+          <span class="image-label" aria-hidden="true"
+            >&lt;Перемены для учителя&gt;</span
+          >
           <img
-            class="card-image black-bus"
+            class="card-image filter-grayscale-invert-brightness"
             src="images/1normal-bus.jpg"
             alt="Автобус пикельная картинка черная"
             loading="lazy"
@@ -380,15 +435,20 @@
             время посмотреть на задачу под другим углом.
           </p>
           <p class="card-additional">
-            Если заблудился в лесу, иди домой.<br>
-            Не жди перемен, они только для учителя.<br>
-            Когда вероятность успеха - 25%, повтори 4 раза.<br>
-            Лучше один раз упасть, чем два раза упасть.<br>
+            Если заблудился в лесу, иди домой.<br />
+            Не жди перемен, они только для учителя.<br />
+            Когда вероятность успеха - 25%, повтори 4 раза.<br />
+            Лучше один раз упасть, чем два раза упасть.<br />
           </p>
           <div class="like-buttons">
-            <button class="card__icon-button">
+            <button
+              class="card__icon-button"
+              type="button"
+              aria-label="Поставить лайк"
+            >
               <svg
                 class="like-icon"
+                aria-hidden="true"
                 width="39"
                 height="36"
                 viewBox="0 0 39 36"
@@ -420,19 +480,21 @@
               </svg>
             </button>
 
-            <button class="card__like-button animated-black-button">
+            <button class="button card__like-button" type="button">
               <span class="button__text">Like</span>
             </button>
           </div>
         </div>
-      </section>
+      </article>
 
-      <section class="card surrender">
+      <article class="card surrender">
         <h2 class="card-title">3 спринт: Когда опускаются руки</h2>
         <div class="image-box">
-          <span class="image-label">&lt;Достал нож - режь&gt;</span>
+          <span class="image-label" aria-hidden="true"
+            >&lt;Достал нож - режь&gt;</span
+          >
           <img
-            class="card-image blind-bus"
+            class="card-image filter-blur-hue-rotate"
             src="images/1normal-bus.jpg"
             alt="Автобус пикельная картинка размытая"
             loading="lazy"
@@ -447,16 +509,22 @@
             черпали.
           </p>
           <p class="card-additional">
-            Не страшно не сдать проект. Главное не сдавать своих друзей.<br>
-            Взял нож - режь, взял дело - делай.<br>
-            Когда все бухают, я осваиваю профессию будущего. А потом тоже бухаю.<br>
-            Если жизнь - это вызов, я перезвоню.<br>
+            Не страшно не сдать проект. Главное не сдавать своих друзей.<br />
+            Взял нож - режь, взял дело - делай.<br />
+            Когда все бухают, я осваиваю профессию будущего. А потом тоже
+            бухаю.<br />
+            Если жизнь - это вызов, я перезвоню.<br />
             С помощью дверей можно проходить через стены.
           </p>
           <div class="like-buttons">
-            <button class="card__icon-button">
+            <button
+              class="card__icon-button"
+              type="button"
+              aria-label="Поставить лайк"
+            >
               <svg
                 class="like-icon"
+                aria-hidden="true"
                 width="39"
                 height="36"
                 viewBox="0 0 39 36"
@@ -488,19 +556,21 @@
               </svg>
             </button>
 
-            <button class="card__like-button animated-black-button">
+            <button class="button card__like-button" type="button">
               <span class="button__text">Like</span>
             </button>
           </div>
         </div>
-      </section>
+      </article>
 
-      <section class="card whith-you">
+      <article class="card whith-you">
         <h2 class="card-title">«Сейчас я здесь»</h2>
         <div class="image-box">
-          <span class="image-label">&lt;Будь как дождь&gt;</span>
+          <span class="image-label" aria-hidden="true"
+            >&lt;Будь как дождь&gt;</span
+          >
           <img
-            class="card-image blind-green-bus"
+            class="card-image filter-invert-blur"
             src="images/1normal-bus.jpg"
             alt="Автобус пикельная картинка зеленаая, красная, размытая"
             loading="lazy"
@@ -516,15 +586,21 @@
             и есть результат.
           </p>
           <p class="card-additional">
-            Будь как дождь - даже когда падаешь, продолжай идти.<br>
-            Не можешь противостоять - противолежи.<br>
-            После черной полосы всегда идет белая. Если сегодня укусила злая собака, то завтра укусит добрая.<br>
-            В мире нет вечных двигателей, зато полно вечных тормозов.<br>
+            Будь как дождь - даже когда падаешь, продолжай идти.<br />
+            Не можешь противостоять - противолежи.<br />
+            После черной полосы всегда идет белая. Если сегодня укусила злая
+            собака, то завтра укусит добрая.<br />
+            В мире нет вечных двигателей, зато полно вечных тормозов.<br />
           </p>
           <div class="like-buttons">
-            <button class="card__icon-button">
+            <button
+              class="card__icon-button"
+              type="button"
+              aria-label="Поставить лайк"
+            >
               <svg
                 class="like-icon"
+                aria-hidden="true"
                 width="39"
                 height="36"
                 viewBox="0 0 39 36"
@@ -556,15 +632,15 @@
               </svg>
             </button>
 
-            <button class="card__like-button animated-black-button">
+            <button class="button card__like-button" type="button">
               <span class="button__text">Like</span>
             </button>
           </div>
         </div>
-      </section>
+      </article>
 
       <button
-        class="button-save animated-black-button"
+        class="button button-save"
         type="button"
         onclick="window['save-dialog'].showModal()"
         aria-controls="save-dialog"
@@ -583,8 +659,8 @@
           Вставьте дискету, чтобы продолжить
         </p>
         <button
-          class="save-block__button animated-black-button"
-          type="button"
+          class="button save-block__button"
+          type="submit"
           onclick="window['save-dialog'].close()"
         >
           <span class="button__text">Ок</span>
