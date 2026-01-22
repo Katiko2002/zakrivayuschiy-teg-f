@@ -38,7 +38,7 @@
   inline-size: var(--container-inline-size);
   margin-inline: auto;
   margin-block-start: 100px;
-  margin-block-end: 100px;
+  margin-block-end: 96px;
   /* padding-block: clamp(122px, 10vw, 130px); 
   Заметила, что border прибавляется к высоте, решила исправить */
   padding-block: clamp(120px, 10vw, 130px);
@@ -331,16 +331,17 @@
 
 .button__floppy-icon {
   display: block;
-  width: 28px;
-  height: 28px;
+  width: 21px;
+  height: 21px;
+
   color: white;
   mix-blend-mode: difference;
 }
 
 .save-block {
-  padding: 30px 40px;
+  padding: 30px 30px;
   inline-size: clamp(341px, 50vw, 353px);
-  margin-inline: 17px;
+  margin: auto;
   display: grid;
   grid-template-columns: min-content 1fr;
   grid-template-rows: 1fr auto;
@@ -390,18 +391,18 @@
 
 /* Медиа писала сразу, начиная с mobile-first, 
 поэтому поменяла медиазапрос */
-@media (width >= 1440px) {
+@media (width < 376px) {
   .header {
-    margin-block-end: 96px;
+    margin-block-end: 100px;
   }
 
   .button__floppy-icon {
-    width: 21px;
-    height: 21px;
+    width: 28px;
+    height: 28px;
   }
 
   .save-block {
-    padding-inline: 30px;
-    margin: auto auto;
+    padding-inline: 40px;
+    margin-inline: 17px;
   }
 }
