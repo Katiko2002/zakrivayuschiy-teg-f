@@ -340,7 +340,7 @@
 
 .save-block {
   padding: 30px 30px;
-  inline-size: clamp(341px, 50vw, 353px);
+  inline-size: clamp(320px, 90vw, 353px);
   margin: auto;
   display: grid;
   grid-template-columns: min-content 1fr;
@@ -348,6 +348,8 @@
   gap: 30px 20px;
   background-color: white;
   position: fixed;
+  outline: none;
+  border: 2px;
 }
 
 .save-block:not([open]) {
@@ -403,6 +405,6 @@
 
   .save-block {
     padding-inline: 40px;
-    margin-inline: 17px;
+    /* margin-inline: 17px; */
   }
 }
