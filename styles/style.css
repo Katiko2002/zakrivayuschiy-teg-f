@@ -171,10 +171,8 @@
   z-index: 1;
   overflow: hidden;
   background-color: white;
-
   height: 38px;
   outline: none;
-  background-color: white;
   border: 2px solid black;
   cursor: pointer;
 }
@@ -219,7 +217,6 @@
 
 .like-icon {
   display: block;
-  width: 100%;
   height: 38px;
   width: 38px;
 }
